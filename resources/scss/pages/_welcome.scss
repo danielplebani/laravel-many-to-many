@@ -1,0 +1,15 @@
+#welcome_page {
+    min-height: 90vh;
+    h1 {
+        color:yellow;
+        font-style: oblique;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    #carousel {
+        img {
+            width: 150%;
+            height: 400px;
+        }
+    }
+}

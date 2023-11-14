@@ -1,0 +1,331 @@
+#mastercard {
+    .flip-card {
+        background-color: transparent;
+        width: 240px;
+        height: 154px;
+        perspective: 1000px;
+        color: white;
+    }
+
+    .heading_8264 {
+        position: absolute;
+        letter-spacing: 0.2em;
+        font-size: 0.5em;
+        top: 2em;
+        left: 18.6em;
+    }
+
+    .logo {
+        position: absolute;
+        top: 6.8em;
+        left: 11.7em;
+    }
+
+    .chip {
+        position: absolute;
+        top: 2.3em;
+        left: 1.5em;
+    }
+
+    .contactless {
+        position: absolute;
+        top: 3.5em;
+        left: 12.4em;
+    }
+
+    .number {
+        position: absolute;
+        font-weight: bold;
+        font-size: 0.6em;
+        top: 8.3em;
+        left: 1.6em;
+    }
+
+    .valid_thru {
+        position: absolute;
+        font-weight: bold;
+        top: 635.8em;
+        font-size: 0.01em;
+        left: 140.3em;
+    }
+
+    .date_8264 {
+        position: absolute;
+        font-weight: bold;
+        font-size: 0.5em;
+        top: 13.6em;
+        left: 3.2em;
+    }
+
+    .name {
+        position: absolute;
+        font-weight: bold;
+        font-size: 0.5em;
+        top: 16.1em;
+        left: 2em;
+    }
+
+    .strip {
+        position: absolute;
+        background-color: black;
+        width: 15em;
+        height: 1.5em;
+        top: 2.4em;
+        background: repeating-linear-gradient(
+            45deg,
+            #303030,
+            #303030 10px,
+            #202020 10px,
+            #202020 20px
+        );
+    }
+
+    .mstrip {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: 8em;
+        height: 0.8em;
+        top: 5em;
+        left: 0.8em;
+        border-radius: 2.5px;
+    }
+
+    .sstrip {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: 4.1em;
+        height: 0.8em;
+        top: 5em;
+        left: 10em;
+        border-radius: 2.5px;
+    }
+
+    .code {
+        font-weight: bold;
+        text-align: center;
+        margin: 0.2em;
+        color: black;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+    }
+
+    .flip-card-front {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px,
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+        background-color: #171717;
+    }
+
+    .flip-card-back {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px,
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+        background-color: #171717;
+        transform: rotateY(180deg);
+    }
+}
+
+#credit-card {
+    .card {
+        width: 245px;
+        height: 155px;
+        background: lightgrey;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .foreground {
+        border-radius: 15px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.8px);
+        -webkit-backdrop-filter: blur(2.8px);
+        padding: 16px;
+        color: white;
+    }
+
+    .credit-card-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .credit-card-chip-container {
+        margin: 8px 0;
+        height: 40px;
+        width: 40px;
+    }
+
+    .chip {
+        width: 100%;
+        height: 100%;
+    }
+
+    .category,
+    .bank {
+        font-size: smaller;
+    }
+
+    .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .names {
+        align-self: flex-end;
+        text-transform: uppercase;
+        font-size: smaller;
+    }
+
+    .serial {
+        align-self: flex-end;
+        letter-spacing: 2px;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    .expire {
+        margin-left: 3px;
+        font-size: smaller;
+    }
+}
+
+#bank-account {
+    /* RIP Uiverse points, welcome Creator points! */
+
+    .card-id567 {
+        width: 190px;
+        height: 190px;
+        background: rgb(255, 255, 255);
+        border-radius: 1rem;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms ease;
+        animation: 8s thumb-thumb infinite;
+    }
+
+    .card-id567 svg path {
+        transition: 300ms ease;
+        stroke: rgb(20, 20, 20);
+        opacity: 0;
+    }
+
+    .bold-567 {
+        font-weight: bold;
+    }
+
+    .blurry-splash {
+        position: absolute;
+        inset: 0;
+        width: 60px;
+        margin: 0 auto;
+        height: 60px;
+        border-radius: 1rem;
+        z-index: -1;
+        opacity: 70%;
+        filter: blur(15px);
+        background: linear-gradient(
+            120deg,
+            rgb(119, 0, 255),
+            rgb(22, 94, 250),
+            rgb(44, 226, 250)
+        );
+    }
+
+    .prompt-id567 {
+        position: absolute;
+        color: rgb(29, 29, 29);
+        text-align: center;
+    }
+
+    .really-small-text {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        font-size: 8px;
+        margin-top: 28px;
+        opacity: 0.5;
+    }
+
+    .card-id567:hover {
+        cursor: none;
+    }
+
+    .card-id567:hover .prompt-id567 {
+        transition: 300ms ease;
+        opacity: 0;
+    }
+
+    .token-container {
+        animation: 2s spinny-token-yayyy infinite;
+        margin-bottom: 10px;
+    }
+
+    .prompt-id567 svg path {
+        stroke: none;
+        opacity: 1;
+    }
+
+    .card-id567:hover svg path {
+        opacity: 1;
+    }
+
+    @keyframes spinny-token-yayyy {
+        0% {
+            transform: perspective(200px) rotateY(0deg);
+        }
+
+        100% {
+            transform: perspective(200px) rotateY(360deg);
+        }
+    }
+
+    @keyframes thumb-thumb {
+        0%,
+        10%,
+        100% {
+            transform: scale(100%);
+        }
+
+        5% {
+            transform: scale(103%);
+        }
+
+        7% {
+            transform: scale(97%);
+        }
+    }
+}
