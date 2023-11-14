@@ -27,7 +27,7 @@ class CreateProjectRequest extends FormRequest
             'link_website' => 'required',
             'content' => 'nullable',
             'cover_image'=> 'nullable|image',
-            'type_id'=> 'required',
+            'type_id'=> 'nullable',
             'technologies'=> 'nullable',
         ];
     }
@@ -40,7 +40,6 @@ class CreateProjectRequest extends FormRequest
             'name.max' => 'Il titolo può avere massimo 100 caratteri!',
             'link_github.required' => 'Il link della repository di github è obbligatorio!',
             'link_website.required' => 'Il link del sito web è obbligatorio!',
-            'type_id.required'=> 'Seleziona una tipologia di file!',
         ];
     }
 }

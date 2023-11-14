@@ -49,7 +49,7 @@
 
                         <td>
                             <span class="badge bg-primary">
-                                {{ $project->type_id}}
+                                {{$project->type ? $project->type->name : 'Uncategorized' }}
                             </span>
                         </td>
 

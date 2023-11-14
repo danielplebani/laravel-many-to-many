@@ -27,11 +27,9 @@
                     </td>
 
                     <td>
-                        <div>
-                            <span class="badge bg-primary">
-                                {{ $project->type ? $project->type->name : 'Uncategorized' }}
-                            </span>
-                        </div>
+                        <span class="badge bg-primary">
+                            {{$project->type ? $project->type->name : 'Uncategorized' }}
+                        </span>
                     </td>
                     
                     <td class="col-2">
