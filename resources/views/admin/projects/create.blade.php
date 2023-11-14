@@ -85,6 +85,16 @@
             </div>
 
 
+            <div class="mb-3">
+                <label for="technologies" class="form-label">Tecnologie usate</label>
+                <select multiple class="form-select" name="technologies[]" id="technologies">
+                    <option disabled>Seleziona delle tecnologie che hai usato</option>
+
+                    @foreach ($technologies as $technology )
+                    <option value="{{$technology->id}}" {{ in_array($technology->id, old('technologies', [])) ? 'selected' : '' }}>{{$technology->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
 
             <div class="mb-3">

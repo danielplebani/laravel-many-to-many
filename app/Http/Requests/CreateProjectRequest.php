@@ -28,6 +28,7 @@ class CreateProjectRequest extends FormRequest
             'content' => 'nullable',
             'cover_image'=> 'nullable|image',
             'type_id'=> 'required',
+            'technologies'=> 'nullable',
         ];
     }
 

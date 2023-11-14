@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -27,7 +28,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view("admin.projects.create", ["types"=> Type::all()]);
+        $types = Type::all();
+        $technologies = Technology::all();
+
+        return view("admin.projects.create", compact("types", "technologies"));
     }
 
     /**
@@ -41,9 +45,9 @@ class ProjectController extends Controller
             $file_path = Storage::put('projects_images', $request->cover_image);
             $validated['cover_image'] = $file_path;
         }
-        
 
-        Project::create($validated);
+        $project = Project::create($validated);
+        $project->technologies()->attach($request->technologies);
 
         return to_route("admin.projects.index");
     }
@@ -61,7 +65,10 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'), ['types'=> Type::all()]);
+        $types = Type::all();
+        $technologies = Technology::all();
+
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -82,6 +89,10 @@ class ProjectController extends Controller
 
         $project->update($validated);
 
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($validated['technologies']);
+        }
+
         return to_route('admin.projects.show', $project);
     }
 
@@ -90,8 +101,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $project->technologies()->detach();
+
         $project->delete();
-        // POST REDIRECT GET
+        
         return to_route('admin.projects.index');
     }
 }

@@ -11,6 +11,8 @@
                     <th scope="col"></th>
                     <th scope="col">NOME</th>
                     <th scope="col">LINK</th>
+                    <th scope="col">TIPOLOGIA DI FILE</th>
+                    <th scope="col">TECNOLOGIE USATE</th>
                     <th scope="col">DESCRIZIONE PROGETTO</th>
                     <th scope="col">IMMAGINE</th>
                 </tr>
@@ -18,17 +20,41 @@
             <tbody>
                 <tr class="text-center">
                     <th scope="row">{{ $project->id }}</th>
-                    <td class="col-3">{{ $project->name }}</td>
+                    <td class="col-2">{{ $project->name }}</td>
                     <td class="col">
                         <a href="{{ $project->link_github }}"><i class="fs-2 fa-brands fa-github mb-4"></i></a>
                         <a href="{{ $project->link_website }}"><i class="fs-4 fa-solid fa-link"></i></a>
                     </td>
+
+                    <td>
+                        <div>
+                            <span class="badge bg-primary">
+                                {{ $project->type ? $project->type->name : 'Uncategorized' }}
+                            </span>
+                        </div>
+                    </td>
+                    
+                    <td class="col-2">
+                        <div class="d-flex gap-2">
+                            <ul class="d-flex flex-wrap gap-1 list-unstyled">
+                                @forelse ($project->technologies as $technology)
+                                    <li class="badge bg-secondary">
+                                        <i class="fas fa-tag fa-xs fa-fw"></i>
+                                        {{ $technology->name }}
+                                    </li>
+                                @empty
+                                    <li class="badge bg-secondary">NESSUNA</li>
+                                @endforelse
+                            </ul>
+                        </div>
+                    </td>
+
                     <td>{{ $project->content }}</td>
                     <td>
                         @if (str_contains($project->cover_image, 'http'))
-                            <img width="300px" src="{{ $project->cover_image }}">
+                            <img width="200px" src="{{ $project->cover_image }}">
                         @else
-                            <img width="300px" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
+                            <img width="200px" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
                         @endif
                     </td>
                 </tr>
