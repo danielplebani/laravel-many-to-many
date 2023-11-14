@@ -27,7 +27,7 @@
                     <th scope="col"></th>
                     <th scope="col">NOME</th>
                     <th scope="col">LINK</th>
-                    <th scope="col">TIPOLOGIA DI FILE</th>
+                    <th scope="col">TIPOLOGIA</th>
                     <th scope="col">TECNOLOGIE USATE</th>
                     <th scope="col">DESCRIZIONE PROGETTO</th>
                     <th scope="col">IMMAGINE</th>
@@ -48,24 +48,30 @@
                         </td>
 
                         <td>
-                            <span class="badge bg-primary">
-                                {{$project->type ? $project->type->name : 'Uncategorized' }}
-                            </span>
+                            <a style="text-decoration: none; color:black;"
+                                href="{{ route('admin.projects.show', ['project' => $project->id]) }}">
+                                <span class="badge bg-primary">
+                                    {{ $project->type ? $project->type->name : 'SENZA TIPOLOGIA' }}
+                                </span>
+                            </a>
                         </td>
 
                         <td class="col-2">
-                            <div class="d-flex gap-2">
-                                <ul class="d-flex flex-wrap gap-1 list-unstyled">
-                                    @forelse ($project->technologies as $technology)
-                                        <li class="badge bg-secondary">
-                                            <i class="fas fa-tag fa-xs fa-fw"></i>
-                                            {{ $technology->name }}
-                                        </li>
-                                    @empty
-                                        <li class="badge bg-secondary">NESSUNA</li>
-                                    @endforelse
-                                </ul>
-                            </div>
+                            <a style="text-decoration: none; color:black;"
+                                href="{{ route('admin.projects.show', ['project' => $project->id]) }}">
+                                <div class="d-flex gap-2">
+                                    <ul class="d-flex flex-wrap gap-1 list-unstyled">
+                                        @forelse ($project->technologies as $technology)
+                                            <li class="badge bg-secondary">
+                                                <i class="fa-solid fa-microchip"></i>
+                                                {{ $technology->name }}
+                                            </li>
+                                        @empty
+                                            <li class="badge bg-secondary">NESSUNA</li>
+                                        @endforelse
+                                    </ul>
+                                </div>
+                            </a>
                         </td>
 
                         <td>

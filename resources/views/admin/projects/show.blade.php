@@ -11,7 +11,7 @@
                     <th scope="col"></th>
                     <th scope="col">NOME</th>
                     <th scope="col">LINK</th>
-                    <th scope="col">TIPOLOGIA DI FILE</th>
+                    <th scope="col">TIPOLOGIA</th>
                     <th scope="col">TECNOLOGIE USATE</th>
                     <th scope="col">DESCRIZIONE PROGETTO</th>
                     <th scope="col">IMMAGINE</th>
@@ -28,7 +28,7 @@
 
                     <td>
                         <span class="badge bg-primary">
-                            {{$project->type ? $project->type->name : 'Uncategorized' }}
+                            {{$project->type ? $project->type->name : 'SENZA TIPOLOGIA' }}
                         </span>
                     </td>
                     
@@ -37,7 +37,7 @@
                             <ul class="d-flex flex-wrap gap-1 list-unstyled">
                                 @forelse ($project->technologies as $technology)
                                     <li class="badge bg-secondary">
-                                        <i class="fas fa-tag fa-xs fa-fw"></i>
+                                        <i class="fa-solid fa-microchip"></i>
                                         {{ $technology->name }}
                                     </li>
                                 @empty
